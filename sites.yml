@@ -8,3 +8,6 @@ hypnotoad:
   workers: 10
 thisapp:
   name: 'Sites'
+  domain: "sumu.dev"
+  description: "Sites"
+  keywords: "Sites "

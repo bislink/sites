@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@mojojs/core": "^1.26.4",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "chart.js": "^4.4.3",
+    "jquery": "^3.7.1",
+    "slideout": "^1.0.1"
+  }
+}

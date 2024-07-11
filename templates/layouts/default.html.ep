@@ -1,5 +1,163 @@
 <!DOCTYPE html>
 <html>
-  <head><title><%= title %></title></head>
-  <body><%= content %></body>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %> - <%= app->config->{thisapp}->{name} %></title>
+    <meta name="description" content="<%= app->config->{thisapp}->{description} %>">
+    <meta name="keywords" content="<%= app->config->{thisapp}->{keywords} %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#B12A34">
+    <meta name="Robots" content="INDEX,FOLLOW">
+    <meta name="Rating" content="General">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="<%= url_for '/favicon.ico' %>">
+    <link rel="manifest" href="<%= url_for '/manifest.json' %>">
+
+    %= include 'style';
+
+    <link rel="stylesheet" href="<%= url_for '/node_modules/bootstrap-icons/font/bootstrap-icons.min.css' %>">
+
+  </head>
+
+  <body>
+
+    <h1><span class="red"><%= app->config->{thisapp}->{name} %></span> <small>.<%= app->config->{thisapp}->{domain} %></small></h1>
+
+    <nav>
+      	<h2 class="inv">Navigation</h2>
+
+      	<ul class="nav nav-pills nav-fill">
+      		<li class="nav-item"><a class="nav-link active"
+            href="//Sites.<%= app->config->{thisapp}->{domain} %>"
+            title="Home"><i class="bi bi-house"></i></a></li>
+      		<li class="nav-item"><a
+            href="//Sites.<%= app->config->{thisapp}->{domain} %>:10000/virtualmin-signup" class="nav-item"
+            title="Create a new/free email account"><i class="bi bi-envelope-at"></i></a></li>
+      		<li class="nav-item"><a href="//Sites.<%= app->config->{thisapp}->{domain} %>:20000" class="nav-item"
+            title="Check Email"><i class="bi bi-envelope-arrow-down"></i></a></li>
+      		<li class="nav-item dropdown">
+      			<a title="A Perl/Mojolicious app" class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">
+      			<i class="bi bi-three-dots"></i>
+      			</a>
+      			<div class="dropdown-menu dropdown-content">
+      				<a class="dropdown-item" href="//Sites.<%= app->config->{thisapp}->{domain} %>" title="Sites - Home">Home</a>
+      				<a class="dropdown-item" href="/support">-</a>
+      				<a class="dropdown-item" href="/contact" title="Contact">-</a>
+      					<div class="dropdown-divider"></div>
+      				<a class="dropdown-item disabled" href="#">-</a>
+      				<a href="#" class="dropdown-item" title="Apache Server">-</a>
+      					<div class="dropdown-divider"></div>
+      				<a class="dropdown-item disabled" href="#">-</a>
+      					<div class="dropdown-divider"></div>
+      			</div>
+      		</li>
+      	</ul>
+      </nav>
+
+    <main>
+
+    <%== content %>
+
+      <article class="container">
+
+  <h2 class="Sites-for-all">Sites For All </h2>
+
+  <div>
+    Sites For People of all color, race, sex, size, ethnicity, location, power, position, . . . 
+  </div>
+
+</article>
+
+
+      <article class="container" id="student">
+    		<h2>Student</h2>
+    		<div>Please send an email to student@Sites.<%= app->config->{thisapp}->{domain} %></div>
+    	</article>
+
+    	<article class="container" id="teacher">
+    		<h2>Teacher</h2>
+    		<div>Please send an email to teacher@Sites.<%= app->config->{thisapp}->{domain} %></div>
+    	</article>
+
+    	<article class="container" id="venue">
+    		<h2>Venue/Place</h2>
+    		<div>The venue will be sent to you by email</div>
+    	</article>
+
+    	<article class="container" id="aliases">
+    		<h2>Domain Aliases</h2>
+    		<div>This domain can also be accessed as <b>en.<%= app->config->{thisapp}->{domain} %></b></div>
+    	</article>
+
+    	<article class="container" id="create-free-email">
+    		<h2>Private/Free Email</h2>
+    			<div>
+    				<a href="//Sites.<%= app->config->{thisapp}->{domain} %>:10000/virtualmin-signup" title="Create your own free email account">Get it</a>
+    			</div>
+    			<div>
+    				After you have created your email, you can <a href="//Sites.<%= app->config->{thisapp}->{domain} %>:20000" title="Check your private email here">check your email here</a>
+    			</div>
+    	</article>
+
+    	<article class="container" id="powered-by">
+    		<h2>About this Web Site/App</h2>
+    		<div>
+          This Web Site/App is powered by Perl, HTML5, CSS, JavaScript,
+          and <a href="//biz-land.com" title="Hosting powered by Biz-Land.com">Biz-Land.com</a>
+        </div>
+    	</article>
+
+<article class="container"><h4>AppLogs</h4>
+
+  <div class="dash-info">
+    #<a href="/applogs"
+      title="Total IPs:71; Total Browsers:1; Total URLs: 1">2657</a>
+  </div>
+
+
+</article>
+
+
+    </main>
+
+    <footer class="container-flex">
+      <div id="this-server"></div>
+    </footer>
+
+    <script defer src="<%= url_for '/node_modules/jquery/dist/jquery.min.js' %>"></script>
+    <script defer src="<%= url_for '/node_modules/bootstrap/dist/js/bootstrap.min.js' %>"></script>
+
+    <script>
+    	// register service worker
+    	if ('serviceWorker' in navigator) {
+    			window.addEventListener('load', () => {
+    			navigator.serviceWorker.register("<%= url_for '/service-worker.js' %>")
+    			.then((reg) => {
+    			console.log('Sites service worker registered.', reg);
+    			});
+    		});
+    	}
+
+      let hostname = window.location.hostname;
+
+      let this_server = document.getElementById('this-server');
+
+      let out = '&copy; ' +hostname+ '';
+      // link to home
+      out += ' &nbsp; &nbsp; &nbsp; <a href="/" title="Home">Home</a> ';
+      // link to home
+      out += '<a href="//Sites.<%= app->config->{thisapp}->{domain} %>:10000/virtualmin-signup" title="Create your own/private email">Get Private/Free Email</a> ';
+      // link to home
+      out += '<a href="//Sites.<%= app->config->{thisapp}->{domain} %>:20000" title="Check Your email">Check Your Email</a> ';
+      // link to home
+      out += '<a href="/" title="Home"></a> ';
+      // link to home
+      out += '<a href="/" title="Home"></a> ';
+      // final aout put
+      this_server.innerHTML = out;
+
+    </script>
+
+  </body>
+
 </html>

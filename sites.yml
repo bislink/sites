@@ -27,7 +27,7 @@ thisapp:
     local:
       main: 'http://localhost:10101'
 dev: 1
-version: '022'
+version: '023'
 dir:
   main: "<%= app->home %>"
   public: "<%= app->home->child('public') %>"

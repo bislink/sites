@@ -108,6 +108,10 @@ else
 
 fi
 
+
+echo "SOME FINALS"
+echo ""
+
 echo "Latest Version number from .yml ";
 grep -r 'version' ./$YAML_NAME;
 echo "";

@@ -1,0 +1,10 @@
+---
+secrets:
+  - e5e217d378d74def95ed6732575dccc1a62b91c5
+hypnotoad:
+  listen:
+    - 'http://*:10101'
+  proxy: 1
+  workers: 10
+thisapp:
+  name: 'Sites'

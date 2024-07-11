@@ -1,6 +1,18 @@
 ---
 secrets:
   - e5e217d378d74def95ed6732575dccc1a62b91c5
+  - etbahamLacShygVogroav;OwewUkTibefEicCeos
+  - yokikwirnEdsaghatDamrivGignubyejsumpubIf
+  - rybshosyinetEnkEfBywachCikoikokanAigHuj7
+  - GavhidWidEuwoowdAphbilHadhodvuremtUrrIka
+  - DecibGalObhidWiweakyiggEctoufwovTekVapAt
+  - peenPyffoygemAldIndorOgwehojEekyofhisoyp
+  - yigmembetKitjisOolhegjotyuSlaSlodOytvuAt
+  - crijnuHebphedjudTunCudtokGarvOppUcKiccig
+  - EunLashcavGiagZydCendOdGathsIbryulumajBo
+  - nasyubosDiwuGrakMicAshyiddyuev!dreibWafb
+  - vegoytboydOiHijninweavVekyavfenn>twalOac
+  - DebchocJivEcDomGoyQuievSukcogNirovvidCir
 hypnotoad:
   listen:
     - 'http://*:10101'
@@ -11,3 +23,7 @@ thisapp:
   domain: "sumu.dev"
   description: "Sites"
   keywords: "Sites "
+  url:
+    local:
+      main: 'http://localhost:10101'
+dev: 1

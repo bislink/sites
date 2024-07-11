@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title><%= title %> - <%= app->config->{thisapp}->{name} %></title>
@@ -21,26 +21,29 @@
 
   <body>
 
-    <h1><span class="red"><%= app->config->{thisapp}->{name} %></span> <small>.<%= app->config->{thisapp}->{domain} %></small></h1>
+    <h1><span class="red"><%= app->config->{thisapp}->{name} %></span> <small>.<%= url_for '/' %></small></h1>
 
     <nav>
       	<h2 class="inv">Navigation</h2>
 
       	<ul class="nav nav-pills nav-fill">
       		<li class="nav-item"><a class="nav-link active"
-            href="//Sites.<%= app->config->{thisapp}->{domain} %>"
-            title="Home"><i class="bi bi-house"></i></a></li>
+            href="<%= url_for '/' %>"
+            title="Home"><i class="bi bi-house"></i></a>
+          </li>
       		<li class="nav-item"><a
-            href="//Sites.<%= app->config->{thisapp}->{domain} %>:10000/virtualmin-signup" class="nav-item"
-            title="Create a new/free email account"><i class="bi bi-envelope-at"></i></a></li>
-      		<li class="nav-item"><a href="//Sites.<%= app->config->{thisapp}->{domain} %>:20000" class="nav-item"
-            title="Check Email"><i class="bi bi-envelope-arrow-down"></i></a></li>
+            href="<%= url_for '/' %>" class="nav-item"
+            title="Create a new/free email account"><i class="bi bi-envelope-at"></i></a>
+          </li>
+      		<li class="nav-item"><a href="<%= url_for '/' %>" class="nav-item"
+            title="Check Email"><i class="bi bi-envelope-arrow-down"></i></a>
+          </li>
       		<li class="nav-item dropdown">
       			<a title="A Perl/Mojolicious app" class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">
       			<i class="bi bi-three-dots"></i>
       			</a>
       			<div class="dropdown-menu dropdown-content">
-      				<a class="dropdown-item" href="//Sites.<%= app->config->{thisapp}->{domain} %>" title="Sites - Home">Home</a>
+      				<a class="dropdown-item" href="<%= url_for '/' %>" title="Sites - Home">Home</a>
       				<a class="dropdown-item" href="/support">-</a>
       				<a class="dropdown-item" href="/contact" title="Contact">-</a>
       					<div class="dropdown-divider"></div>
@@ -86,9 +89,9 @@
       // link to home
       out += ' &nbsp; &nbsp; &nbsp; <a href="/" title="Home">Home</a> ';
       // link to home
-      out += '<a href="//Sites.<%= app->config->{thisapp}->{domain} %>:10000/virtualmin-signup" title="Create your own/private email">Get Private/Free Email</a> ';
+      //out += '<a href="<%= url_for '/' %>" title="Create your own/private email">Get Private/Free Email</a> ';
       // link to home
-      out += '<a href="//Sites.<%= app->config->{thisapp}->{domain} %>:20000" title="Check Your email">Check Your Email</a> ';
+      //out += '<a href="<%= url_for '/' %>" title="Check Your email">Check Your Email</a> ';
       // link to home
       out += '<a href="/" title="Home"></a> ';
       // link to home

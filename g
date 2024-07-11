@@ -45,7 +45,11 @@ else
 
     # also push to repo automatically.
     echo "Push/update Git Lab Repo"
-    #./r
+    if [-f ./r ]; then 
+        ./r
+    else 
+        echo "No ./r";
+    fi
 
     echo "$!";
 

@@ -45,10 +45,10 @@ else
 
     # also push to repo automatically.
     echo "Push/update Git Lab Repo"
-    if [-f ./r ]; then 
+    if [[ -f ./r ]]; then 
         ./r
     else 
-        echo "No ./r";
+        echo "Repo executable file ./r not found";
     fi
 
     echo "$!";

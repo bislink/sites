@@ -12,6 +12,8 @@ YAML_NAME=`./get_val_from_name.pl YAML_NAME`;
 
 VISITS_FILE='sites.visits';
 
+VERSION_FILE='sites.version';
+
 if [ "$1" = '' ]; then
 
     # do not commit
@@ -66,7 +68,7 @@ else
 
     echo "/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/";
 
-    echo "$NEXT_COMMIT_ID|$DATE" > ./sites.version
+    echo "$NEXT_COMMIT_ID|$DATE" > ./VERSION_FILE
 fi
 
 echo "";

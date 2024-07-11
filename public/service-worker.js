@@ -1,4 +1,6 @@
-// Sites, cj.a1z.us/service-worker.js, Edge
+// Sites, /service-worker.js
+
+// version: 005
 
 'use strict';
 

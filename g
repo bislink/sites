@@ -8,16 +8,9 @@ CURRENT_COMMIT_ID=`./get_current_commit_id.pl`;
 
 COMMIT_MESSAGE=;
 
-YAMLNAME=`./get_val_from_name.pl YAML_NAME`;
+YAML_NAME=`./get_val_from_name.pl YAML_NAME`;
 
-CONTAINER_NAME=`./get_container_name.pl`;
-
-CONTAINER_VOLUME_DIR='/usr/share/dockrl92';
-
-VISITS_FILE='visits.dockrl92';
-
-TOTAL=$(docker exec -i $CONTAINER_NAME sh -c "cat $CONTAINER_VOLUME_DIR/$VISITS_FILE");
-
+VISITS_FILE='sites.visits';
 
 if [ "$1" = '' ]; then
 
@@ -52,7 +45,7 @@ else
 
     # also push to repo automatically.
     echo "Push/update Git Lab Repo"
-    ./r
+    #./r
 
     echo "$!";
 
@@ -69,25 +62,17 @@ else
 
     echo "/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/";
 
-    echo "$NEXT_COMMIT_ID|$DATE" > ./version.dockrl92
+    echo "$NEXT_COMMIT_ID|$DATE" > ./sites.version
 fi
 
 echo "";
 
-echo "Latest Version number from dockrl92.yml ";
-grep -r 'version' ./dockrl92.yml;
+echo "Latest Version number from .yml ";
+grep -r 'version' ./$YAML_NAME;
 echo "";
 
 echo "Latest Version number from service-worker.js ";
 grep -r 'version' ./public/service-worker.js;
-echo "";
-
-echo "Latest version number from the actual version.'app' file ";
-cat ./version.dockrl92;
-echo "";
-
-echo "Total Visits: (From $CONTAINER_VOLUME_DIR/$VISITS_FILE)";
-echo "$TOTAL";
 echo "";
 
 echo "Total Commits";

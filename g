@@ -58,21 +58,26 @@ else
     # update service-worker.js
     echo "Update service worker"
     sed -i "s/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/" ./public/service-worker.js;
+    echo ""
 
     # change version in .yml
     echo "Change version in $YAML_NAME file"
     sed -i "s/version: '$CURRENT_COMMIT_ID'/version: '$NEXT_COMMIT_ID'/" $YAML_NAME;
+    echo ""
 
     echo "/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/";
 
     echo "Write Next commit ID and Date to $VERSION_FILE";
     echo "$NEXT_COMMIT_ID|$DATE" > ./$VERSION_FILE
+    echo ""
 
     echo "Committing Message"
     git commit -am "$NEXT_COMMIT_ID $COMMIT_MESSAGE $(date '+%Y%m%d%H%M%S') -${USER}";
+    echo ""
 
     echo "Show error if any"
     echo "$!"
+    echo ""
 
     # also push to repo automatically.
     echo "Push/update Git Lab Repo"
@@ -81,8 +86,11 @@ else
     else 
         echo "${Red}Repo executable, ./r, was not found${NoColor}";
     fi
+    echo ""
 
+    echo "Show error if any"
     echo "$!";
+    echo ""
 
     # also run hypnotoad hot deployment
 
@@ -92,12 +100,13 @@ else
     else
         echo " ${Red}Hypnotoad executable, ./h, was not found${NoColor}";
     fi
+    echo ""
 
+    echo "Show error if any"
     echo "$!";
+    echo ""
 
 fi
-
-echo "";
 
 echo "Latest Version number from .yml ";
 grep -r 'version' ./$YAML_NAME;

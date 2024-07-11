@@ -1,6 +1,6 @@
 // Sites, /service-worker.js
 
-// version: 018
+// version: 019
 
 'use strict';
 

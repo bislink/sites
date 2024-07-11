@@ -56,15 +56,22 @@ else
     COMMIT_MESSAGE="$1";
 
     # update service-worker.js
+    echo "Update service worker"
     sed -i "s/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/" ./public/service-worker.js;
 
     # change version in .yml
+    echo "Change version in $YAML_NAME file"
     sed -i "s/version: '$CURRENT_COMMIT_ID'/version: '$NEXT_COMMIT_ID'/" $YAML_NAME;
 
-    # echo "$NEXT_COMMIT_ID $COMMIT_MESSAGE $(date '+%Y%m%d%H%M%S')";
-        echo "Committing Message"
+    echo "/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/";
+
+    echo "Write Next commit ID and Date to $VERSION_FILE";
+    echo "$NEXT_COMMIT_ID|$DATE" > ./$VERSION_FILE
+
+    echo "Committing Message"
     git commit -am "$NEXT_COMMIT_ID $COMMIT_MESSAGE $(date '+%Y%m%d%H%M%S') -${USER}";
 
+    echo "Show error if any"
     echo "$!"
 
     # also push to repo automatically.
@@ -88,9 +95,6 @@ else
 
     echo "$!";
 
-    echo "/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/";
-
-    echo "$NEXT_COMMIT_ID|$DATE" > ./$VERSION_FILE
 fi
 
 echo "";

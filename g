@@ -72,7 +72,7 @@ else
     if [ -f "./r" ]; then 
         ./r
     else 
-        echo "${Red}Repo executable file ./r not found${NoColor}";
+        echo "${Red}Repo executable, ./r, was not found${NoColor}";
     fi
 
     echo "$!";
@@ -83,7 +83,7 @@ else
         echo "hypnotoad hot deployment"
         ./h
     else
-        echo " ${Red}Hypnotoad file ./h not found${NoColor}";
+        echo " ${Red}Hypnotoad executable, ./h, was not found${NoColor}";
     fi
 
     echo "$!";

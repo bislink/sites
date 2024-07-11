@@ -27,4 +27,4 @@ thisapp:
     local:
       main: 'http://localhost:10101'
 dev: 1
-version: '011'
+version: '012'

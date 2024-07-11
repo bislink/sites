@@ -56,7 +56,6 @@ else
     COMMIT_MESSAGE="$1";
 
     # update service-worker.js
-    # sed -i 's/036/037/' public/service-worker.js
     sed -i "s/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/" ./public/service-worker.js;
 
     # change version in .yml
@@ -73,7 +72,7 @@ else
     if [ -f "./r" ]; then 
         ./r
     else 
-        echo "Repo executable file ./r not found";
+        echo "${Red}Repo executable file ./r not found${NoColor}";
     fi
 
     echo "$!";
@@ -84,7 +83,7 @@ else
         echo "hypnotoad hot deployment"
         ./h
     else
-        echo -e " ${RED}Hypnotoad file ./h not found${NOCOLOR}";
+        echo " ${Red}Hypnotoad file ./h not found${NoColor}";
     fi
 
     echo "$!";

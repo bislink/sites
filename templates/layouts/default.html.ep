@@ -58,66 +58,6 @@
 
     <%== content %>
 
-      <article class="container">
-
-  <h2 class="Sites-for-all">Sites For All </h2>
-
-  <div>
-    Sites For People of all color, race, sex, size, ethnicity, location, power, position, . . . 
-  </div>
-
-</article>
-
-
-      <article class="container" id="student">
-    		<h2>Student</h2>
-    		<div>Please send an email to student@Sites.<%= app->config->{thisapp}->{domain} %></div>
-    	</article>
-
-    	<article class="container" id="teacher">
-    		<h2>Teacher</h2>
-    		<div>Please send an email to teacher@Sites.<%= app->config->{thisapp}->{domain} %></div>
-    	</article>
-
-    	<article class="container" id="venue">
-    		<h2>Venue/Place</h2>
-    		<div>The venue will be sent to you by email</div>
-    	</article>
-
-    	<article class="container" id="aliases">
-    		<h2>Domain Aliases</h2>
-    		<div>This domain can also be accessed as <b>en.<%= app->config->{thisapp}->{domain} %></b></div>
-    	</article>
-
-    	<article class="container" id="create-free-email">
-    		<h2>Private/Free Email</h2>
-    			<div>
-    				<a href="//Sites.<%= app->config->{thisapp}->{domain} %>:10000/virtualmin-signup" title="Create your own free email account">Get it</a>
-    			</div>
-    			<div>
-    				After you have created your email, you can <a href="//Sites.<%= app->config->{thisapp}->{domain} %>:20000" title="Check your private email here">check your email here</a>
-    			</div>
-    	</article>
-
-    	<article class="container" id="powered-by">
-    		<h2>About this Web Site/App</h2>
-    		<div>
-          This Web Site/App is powered by Perl, HTML5, CSS, JavaScript,
-          and <a href="//biz-land.com" title="Hosting powered by Biz-Land.com">Biz-Land.com</a>
-        </div>
-    	</article>
-
-<article class="container"><h4>AppLogs</h4>
-
-  <div class="dash-info">
-    #<a href="/applogs"
-      title="Total IPs:71; Total Browsers:1; Total URLs: 1">2657</a>
-  </div>
-
-
-</article>
-
-
     </main>
 
     <footer class="container-flex">

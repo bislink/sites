@@ -209,4 +209,8 @@ article div { padding: 0 0 0 1rem; margin: 0 0 1rem 0;}
   font-size: 2rem;
 }
 
+.ns30-ip {
+	color: red; 
+}
+
 </style>

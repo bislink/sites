@@ -1,3 +1,9 @@
+% my $date = `date`;
+% chomp $date; # Thu Jul 11 14:57:49 CDT 2024
+% my ($dayname_short, $month_name_short, $day_num, $time, $zone, $year) = split(/\s+/, $date);
+% $time =~ s!\:!!g;
+% my $date4pwa = qq{${year}${month_name_short}${day_num}${zone}${time}${dayname_short}};
+%#
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +34,7 @@
 
       	<ul class="nav nav-pills nav-fill">
       		<li class="nav-item"><a class="nav-link active"
-            href="<%= url_for '/' %>"
+            href="<%= url_for '/' %>?pwa=<%= $date4pwa %>"
             title="Home"><i class="bi bi-house"></i></a>
           </li>
       		<li class="nav-item"><a

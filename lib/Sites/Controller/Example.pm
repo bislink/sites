@@ -4,9 +4,26 @@ use Mojo::Base 'Mojolicious::Controller', -signatures;
 # This action will render a template
 sub welcome ($self) {
 
-my @SITES=('a1z.us', 'biz-land.com', 'bizzland.com', 'bislinks.com', 'a2z.red', 'books66.com', 'biblewhat.com', 
-'bizzland.in', 'bizland.uk', 'bizland.asia', 'preachword.com', 'books66.com', 'mroshni.com', 'msneha.com', 
-'sumu.uk', 'sumu.in', 'sirsumu.com', 'sumu.name', 'sumu.dev', 'biz-land.in');
+# Open Site File. Not added into git. 
+
+#
+my $error = '';
+#
+my $SITES_FILE = $self->config->{dir}->{main} . "/sites.txt";
+
+#
+my @SITES;
+
+my $FILE; 
+if ( open($FILE, "<", "$SITES_FILE" ) ) {
+  while (my $site = <$FILE>) {
+    chomp $site;
+    push(@SITES, "$site");
+  }
+} else {
+  $error = "sites file not found";
+}
+close $FILE;
 
 my $out = qq{<table class="table table-striped table-responsive table-hover">}; 
 
@@ -26,7 +43,7 @@ foreach my $SITE (sort @SITES) {
 $out .= qq{</table>};
 
   # Render template "example/welcome.html.ep" with message
-  $self->render(msg => 'Sites!', out => $out);
+  $self->render(msg => 'Sites!', out => $out, error => qq{$error} );
 }
 
 1;

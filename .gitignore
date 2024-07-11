@@ -1,2 +1,3 @@
 script/hypnotoad.pid
-./gitignore
+.gitignore
+sites.txt

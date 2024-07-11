@@ -5,3 +5,7 @@
 <%== $out %>
 </article>
 
+<div class="dev">
+<%== $error %>
+</div>
+

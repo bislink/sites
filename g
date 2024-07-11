@@ -32,10 +32,10 @@ else
 
     # update service-worker.js
     # sed -i 's/036/037/' public/service-worker.js
-    sed -i "s/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/" public/service-worker.js;
+    sed -i "s/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/" ./public/service-worker.js;
 
     # change version in .yml
-    sed -i "s/version: '$CURRENT_COMMIT_ID'/version: '$NEXT_COMMIT_ID'/" $YAMLNAME;
+    sed -i "s/version: '$CURRENT_COMMIT_ID'/version: '$NEXT_COMMIT_ID'/" $YAML_NAME;
 
     # echo "$NEXT_COMMIT_ID $COMMIT_MESSAGE $(date '+%Y%m%d%H%M%S')";
         echo "Committing Message"

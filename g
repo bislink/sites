@@ -1,5 +1,9 @@
 #!/usr/bin/sh
 
+# colors 
+RED='\033[0;31m'
+NOCOLOR='\033[0m' # No Color
+
 DATE=$(date '+%Y%m%d%H%M%S');
 
 NEXT_COMMIT_ID=`./get_commit_id.pl`;
@@ -61,14 +65,14 @@ else
         echo "hypnotoad hot deployment"
         ./h
     else
-        echo "./h not found";
+        echo -e " ${RED}Hypnotoad file ./h not found${NOCOLOR}";
     fi
 
     echo "$!";
 
     echo "/$CURRENT_COMMIT_ID/$NEXT_COMMIT_ID/";
 
-    echo "$NEXT_COMMIT_ID|$DATE" > ./VERSION_FILE
+    echo "$NEXT_COMMIT_ID|$DATE" > ./$VERSION_FILE
 fi
 
 echo "";

@@ -15,7 +15,7 @@ sub welcome ($self) {
 my $error = '';
 #
 my $SITES_FILE = $self->config->{dir}->{main} . "/sites.txt";
-
+my $IP_FILE_01 = $self->config->{dir}->{main} . "/data/ip/01.txt";
 #
 my @SITES;
 
@@ -30,6 +30,15 @@ if ( open($FILE, "<", "$SITES_FILE" ) ) {
   push(@SITES, "biz-land.com");
 }
 close $FILE;
+
+my $IP_FILE; my $IP_01;
+if ( open($IP_FILE, "<", "$IP_FILE_01" ) ) {
+  $IP_01 = <$IP_FILE>;
+  chomp $IP_01;
+} else {
+  $error = "IP_FILE not found ($IP_FILE, $IP_01)";
+}
+close $IP_FILE;
 
 # datetime
 my %date;
@@ -63,7 +72,7 @@ foreach my $SITE (sort @SITES) {
   $second =~ s!^0!!;
 
   my $dig_span;
-  if ( $dig eq '203.161.44.214') { $dig_span = qq{<span class="ns30-ip">$dig</span>}; }
+  if ( $dig eq "$IP_01") { $dig_span = qq{<span class="ns30-ip">$dig</span>}; }
   else { $dig_span = $dig; }
 
   my $dash_dot = $SITE;
@@ -78,7 +87,7 @@ foreach my $SITE (sort @SITES) {
 
   #my $days = $date{"$SITE-DUR"}->days;
 
-  # final out put 
+  # final output 
   $out .= qq{
     <tr> 
       <td>$serial</td> 

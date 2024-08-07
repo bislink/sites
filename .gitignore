@@ -1,3 +1,5 @@
 script/hypnotoad.pid
 .gitignore
 sites.txt
+data/
+data/*

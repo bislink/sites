@@ -1,12 +1,53 @@
 # Sites
 
+Show expiry date for each domain from a list of domains you own/use
+
+This app 
+    lists 
+        domains in alphabetical order and 
+    shows 
+        Host IP and 
+        expiry date 
+for each domain.
+
+## Requirements 
+
+### Operating System
+
+*nix, WSL
+
+### Perl
+
+version 5.28+ with Mojolicious
+
+## Domains List File
+
+./sites.txt
+
 Create a file `sites.txt` in the project main folder and add your favorite domains one per line
 
-# Get/download
+This file is not in the download; You have to create it manually.
 
-clone from github or git.biz-land.in
+## Get/Download
 
-# WSL
+### clone
+
+cd ~/s
+git clone URL
+
+#### From GitHub
+
+https://github.com/bislink/sites
+
+git clone https://github.com/bislink/sites.git
+
+#### From git.biz-land.in
+
+https://git.biz-land.in/ns21u2204/sites
+
+git clone https://git.biz-land.in/ns21u2204/sites.git
+
+## WSL
 
 cd to main folder and run ./h to get started
 

@@ -71,7 +71,7 @@ foreach my $SITE (sort @SITES) {
   $dash_dot =~ s!\.!dot!g;
 
   if ( $year =~ /\d+/ and $month =~ /\d+/ and $day =~ /\d+/ and $hour =~ /\d+/ and $minute =~ /\d+/ and $second =~ /\d+/ ) {
-    $date{"$dash_dot"} = DateTime->new(year => $year, month => $month, day => $day, hour => $hour, minute => $minute );
+    #$date{"$dash_dot"} = DateTime->new(year => $year, month => $month, day => $day, hour => $hour, minute => $minute );
   }
   
   #$date{"$dash_dot-duration"} = $date{"$dash_dot"}->subtract_datetime($now);

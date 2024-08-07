@@ -22,7 +22,11 @@ Any Windows Operating System with WSL
 
 *nix, WSL
 
-This app was tested/developed on a Laptop running Windows 11 with WSL (Ubuntu 22.04 LTS)
+This app was 
+
+    developed on a Laptop running Windows 11 with WSL (Ubuntu 22.04 LTS)
+
+    tested on a Rocky Linux instance in a Hyper-V environment
 
 ### Perl
 
@@ -36,11 +40,6 @@ Create a file `sites.txt` in the project main folder and add your favorite domai
 
 This file is not in the download; You have to create it manually.
 
-cd ~/sites;
-mkdir data/ip -p
-echo "127.0.0.1" > data/ip/01.txt
-
-Make sure you replace 127.0.0.1 with your Host IP.
 
 ## Get/Download
 
@@ -75,6 +74,15 @@ This dir/file is not added to .git
     
     Provide your web host ip where most of your sites/domains are hosted
         not where your domains are registered
+
+#### Run the following on commandline to create (only for the first time)
+
+cd ~/sites;
+mkdir data/ip -p
+echo "127.0.0.1" > data/ip/01.txt
+
+Make sure you replace 127.0.0.1 with your Host IP.
+
 
 ## Firewall in Rocky Linux
 

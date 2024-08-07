@@ -19,7 +19,9 @@ LightCyan='\033[1;36m'
 LightGray='\033[0;37m'
 White='\033[1;37m'
 
-echo "${LightBlue}This text is in LightBlue $NoColor"
+echo ""
+echo "${Cyan}Welcome to sites $NoColor"
+echo ""
 
 DATE=$(date '+%Y%m%d-%H%M%S-%Z');
 
@@ -44,7 +46,7 @@ if [ "$1" = '' ]; then
 
     COMMIT_MESSAGE=$(date '+%Y%m%d%H%M%S');
 
-    echo "Showing oneliners from last 9 commits"
+    echo "Showing oneliners from last 9 commits/log"
     git log -9 --oneline
 
     echo "Show Status"

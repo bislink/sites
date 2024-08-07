@@ -44,8 +44,8 @@ if [ "$1" = '' ]; then
 
     COMMIT_MESSAGE=$(date '+%Y%m%d%H%M%S');
 
-    echo "Showing last commit from log"
-    git log -1
+    echo "Showing oneliners from last 9 commits"
+    git log -9 --oneline
 
     echo "Show Status"
     git status

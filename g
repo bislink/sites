@@ -44,13 +44,18 @@ if [ "$1" = '' ]; then
     # do not commit
         # just show status/log/etc.
 
-    COMMIT_MESSAGE=$(date '+%Y%m%d%H%M%S');
+    COMMIT_MESSAGE=$DATE;
 
     echo "Showing oneliners from last 9 commits/log"
     git log -9 --oneline
 
     echo "Show Status"
     git status
+
+    echo ""
+    echo "DATE"
+    echo $DATE
+    echo ""
 
 else
     # if $1 is not empty, commit

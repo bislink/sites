@@ -1,11 +1,11 @@
 // Sites, /service-worker.js
 
-// version: 037
+// version: 038
 
 'use strict';
 
-const CACHE_NAME = 'Sites.203707102433';
-const DATA_CACHE_NAME = 'Sites.203707102433';
+const CACHE_NAME = 'Sites.203807102433';
+const DATA_CACHE_NAME = 'Sites.203807102433';
 
 const FILES_TO_CACHE = [
 

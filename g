@@ -72,7 +72,7 @@ else
     echo ""
 
     echo "Committing Message"
-    git commit -am "$NEXT_COMMIT_ID $COMMIT_MESSAGE $(date '+%Y%m%d%H%M%S') -${USER}";
+    git commit -am "$NEXT_COMMIT_ID $COMMIT_MESSAGE $(date '+%Y%m%d%H%M%S')";
     echo ""
 
     echo "Show error if any"

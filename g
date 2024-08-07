@@ -21,7 +21,7 @@ White='\033[1;37m'
 
 echo "${LightBlue}This text is in LightBlue $NoColor"
 
-DATE=$(date '+%Y%m%d%H%M%S');
+DATE=$(date '+%Y%m%d-%H%M%S-%Z');
 
 NEXT_COMMIT_ID=`./get_commit_id.pl`;
 

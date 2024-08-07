@@ -10,23 +10,37 @@ This app
         expiry date 
 for each domain.
 
+## Load Time
+
+Takes about 33 seconds to load main page
+
 ## Requirements 
+
+Any Windows Operating System with WSL
 
 ### Operating System
 
 *nix, WSL
 
+This app was tested/developed on a Laptop running Windows 11 with WSL (Ubuntu 22.04 LTS)
+
 ### Perl
 
-version 5.28+ with Mojolicious
+Version 5.28+ with Mojolicious
 
 ## Domains List File
 
-./sites.txt
+### ./sites.txt
 
 Create a file `sites.txt` in the project main folder and add your favorite domains one per line
 
 This file is not in the download; You have to create it manually.
+
+cd ~/sites;
+mkdir data/ip -p
+echo "127.0.0.1" > data/ip/01.txt
+
+Make sure you replace 127.0.0.1 with your Host IP.
 
 ## Get/Download
 
@@ -61,4 +75,9 @@ This dir/file is not added to .git
     
     Provide your web host ip where most of your sites/domains are hosted
         not where your domains are registered
+
+## Firewall in Rocky Linux
+
+sudo firewall-cmd --permanent --add-port=10101/tcp
+sudo firewall-cmd --reload
 

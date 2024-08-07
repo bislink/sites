@@ -12,7 +12,8 @@ for each domain.
 
 ## Load Time
 
-Takes about 33 seconds to load main page
+Took about 33 seconds to load main page with 29 lines/sites/domains in sites.txt file on WSL
+
 
 ## Requirements 
 
@@ -43,22 +44,24 @@ This file is not in the download; You have to create it manually.
 
 ## Get/Download
 
+You can download or clone from either GitHub or our own on-premise Git Lab repositories.
+
 ### clone
 
-cd ~/s
-git clone URL
+    cd ~/s
+    git clone URL
 
 #### From GitHub
 
 https://github.com/bislink/sites
 
-git clone https://github.com/bislink/sites.git
+    git clone https://github.com/bislink/sites.git
 
 #### From git.biz-land.in
 
 https://git.biz-land.in/ns21u2204/sites
 
-git clone https://git.biz-land.in/ns21u2204/sites.git
+    git clone https://git.biz-land.in/ns21u2204/sites.git
 
 ## WSL
 
@@ -77,15 +80,19 @@ This dir/file is not added to .git
 
 #### Run the following on commandline to create (only for the first time)
 
-cd ~/sites;
-mkdir data/ip -p
-echo "127.0.0.1" > data/ip/01.txt
+    cd ~/sites;
+    mkdir data/ip -p
+    echo "127.0.0.1" > data/ip/01.txt
 
 Make sure you replace 127.0.0.1 with your Host IP.
 
 
 ## Firewall in Rocky Linux
 
-sudo firewall-cmd --permanent --add-port=10101/tcp
-sudo firewall-cmd --reload
+    sudo firewall-cmd --permanent --add-port=10101/tcp
+    sudo firewall-cmd --reload
+
+## Powered by
+
+Perl.org, Mojolicious.org, Bash, HTML5/CSS, and JavaScript/Bootstrap.
 

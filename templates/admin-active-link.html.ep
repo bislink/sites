@@ -1,0 +1,6 @@
+<li class="nav-item active">
+        <a class="nav-link" href="<%= url_for '/admin/dir' %>">Directory</a>
+</li>
+<li class="nav-item">
+        <a class="nav-link" href="<%= url_for '/admin/file' %>">File</a>
+</li>

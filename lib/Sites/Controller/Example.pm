@@ -55,6 +55,13 @@ foreach my $SITE (sort @SITES) {
   my ($hour, $minute, $second ) = split(/\:/, $time);
   $second =~ s!Z$!!;
 
+  # remove 0 at the beginning 
+  $month =~ s!^0!!;
+  $day =~ s!^0!!;
+  $hour =~ s!^0!!;
+  $minute =~ s!^0!!;
+  $second =~ s!^0!!;
+
   my $dig_span;
   if ( $dig eq '203.161.44.214') { $dig_span = qq{<span class="ns30-ip">$dig</span>}; }
   else { $dig_span = $dig; }
@@ -64,10 +71,10 @@ foreach my $SITE (sort @SITES) {
   $dash_dot =~ s!\.!dot!g;
 
   if ( $year =~ /\d+/ and $month =~ /\d+/ and $day =~ /\d+/ and $hour =~ /\d+/ and $minute =~ /\d+/ and $second =~ /\d+/ ) {
-    $date{"$dash_dot"} = qq{DateTime->new(year => $year, month => $month, day => $day, hour => $hour, minute => $minute, second => $second ); };
+    $date{"$dash_dot"} = DateTime->new(year => $year, month => $month, day => $day, hour => $hour, minute => $minute );
   }
   
-  #$date{"$SITE-DUR"} = $date{"$SITE"}->subtract_datetime($now);
+  #$date{"$dash_dot-duration"} = $date{"$dash_dot"}->subtract_datetime($now);
 
   #my $days = $date{"$SITE-DUR"}->days;
 

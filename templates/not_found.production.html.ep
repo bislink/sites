@@ -1,0 +1,4 @@
+% layout 'default';
+% title '?';
+<h2>Not Found</h2>
+<a href="<%= url_for '/' %>" title="Home">Home</a>
